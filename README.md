@@ -52,7 +52,7 @@ The datasets produced for the experiments can be found on Zenodo: *AOL Dataset f
       - Privacy results for Generalization and utility results for Generalization, Bounded Noise, and Differential Privacy are expected to slightly vary with each run of the analyses over this dataset.
   - `AOL-reduced-Google-Topics-Classification-v1.ipynb`:
     - Converts the dataset `AOL-treated.csv`.
-    - Reduces the dataset `AOL-treated.csv` according to the dataset `AOL-treated-Google-Topics-Classification-v1-domain-match.csv.
+    - Reduces the dataset `AOL-treated.csv` according to the dataset `AOL-treated-Google-Topics-Classification-v1-domain-match.csv`.
     - Generates the dataset `AOL-reduced-Google-Topics-Classification-v1.csv`.
       - The dataset `AOL-reduced-Google-Topics-Classification-v1.csv` can be used for analyses of browsing history vulnerability and utility, as enabled by third-party cookies, and for analyses of topics of interest vulnerability and utility, as enabled by the Topics API.
       - This dataset contains singletons and the outlier that are dropped in some analyses.
