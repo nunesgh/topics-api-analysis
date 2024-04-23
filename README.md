@@ -31,7 +31,7 @@ The datasets produced for the experiments can be found on Zenodo: *AOL Dataset f
     - Treats inconsistencies; Randomly remaps `AnonID` to `RandID`; Defines domains from URLs; and Filters domains by eTLD using `tldextract` and Mozilla's Public Suffix List, as of commit [5e6ac3a](https://github.com/publicsuffix/list/tree/5e6ac3a082505ac4cf08858bdb38382d9a912833), extended by the discontinued TLDs: .bg.ac.yu, .ac.yu, .cg.yu, .co.yu, .edu.yu, .gov.yu, .net.yu, .org.yu, .yu, .or.tp, .tp, and .an.
     - Generates the datasets `AOL-treated.csv` and `AOL-treated-unique-domains.csv`.
       - The dataset `AOL-treated.csv` can be used for analyses of browsing history vulnerability and utility, as enabled by third-party cookies.
-      - This dataset contains singletons (individuals with only one domain in their browsing histories) and one outlier (one user with 150.803 domain visits in three months) that are dropped in some analyses.
+      - This dataset contains singletons (individuals with only one domain in their browsing histories) and one outlier (one user with 150.802 domain visits in three months) that are dropped in some analyses.
   - `Citizen-Lab-Classification-data-treatment.ipynb`:
     - Converts the Citizen Lab Classification data, as of commit [ebd0ee8](https://github.com/citizenlab/test-lists/tree/ebd0ee8d41977b381972b2f6c471af5437d8d015/lists).
     - Treats inconsistencies; Defines domains from URLs; Filters domains by eTLD using `tldextract` and Mozilla's Public Suffix List, as of commit [5e6ac3a](https://github.com/publicsuffix/list/tree/5e6ac3a082505ac4cf08858bdb38382d9a912833), extended by the discontinued TLDs: .bg.ac.yu, .ac.yu, .cg.yu, .co.yu, .edu.yu, .gov.yu, .net.yu, .org.yu, .yu, .or.tp, .tp, and .an; and Merges classifications by domain.
@@ -60,7 +60,7 @@ The datasets produced for the experiments can be found on Zenodo: *AOL Dataset f
       - Privacy results for Generalization and utility results for Generalization, Bounded Noise, and Differential Privacy are expected to slightly vary with each run of the analyses over this dataset.
   - `AOL-experimental.ipynb`:
     - Converts the dataset `AOL-treated.csv`.
-    - Drops singletons (individuals with only one domain in their browsing histories) and one outlier (one user with 150.803 domain visits in three months); and Defines browsing histories.
+    - Drops singletons (individuals with only one domain in their browsing histories) and one outlier (one user with 150.802 domain visits in three months); and Defines browsing histories.
     - Generates the dataset `AOL-experimental.csv`.
       - The dataset `AOL-experimental.csv` can be used to empirically verify code correctness.
       - All privacy and utility results are expected to remain the same with each run of the analyses over this dataset.
