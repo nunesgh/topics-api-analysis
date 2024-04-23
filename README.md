@@ -26,23 +26,78 @@ The datasets produced for the experiments can be found on Zenodo: *AOL Dataset f
 ## Notebooks
 
 - Data treatment:
-  - `AOL-data-treatment.ipynb`: Converts the original AOL dataset and generates the datasets `AOL-treated.csv` and `AOL-treated-unique-domains.csv`.
-  - `Citizen-Lab-Classification-data-treatment.ipynb`: Converts the Citizen Lab Classification data, as of commit [ebd0ee8](https://github.com/citizenlab/test-lists/tree/ebd0ee8d41977b381972b2f6c471af5437d8d015/lists), and generates the dataset `Citizen-Lab-Classification.csv`.
-  - `AOL-treated-Citizen-Lab-Classification-domain-matching.ipynb`: Matches domains from `AOL-treated-unique-domains.csv` with domains and respective topics from `Citizen-Lab-Classification.csv` and generates the dataset `AOL-treated-Citizen-Lab-Classification-domain-match.csv`.
-  - `AOL-treated-Google-Topics-Classification-v1-domain-matching.ipynb`: Matches domains from `AOL-treated-unique-domains.csv` with domains and respective topics from `Google-Topics-Classification-v1.txt`, as provided by Google with the Chrome browser, and generates the dataset `AOL-treated-Google-Topics-Classification-v1-domain-match.csv`.
-  - `AOL-reduced-Citizen-Lab-Classification.ipynb`: Converts the dataset `AOL-treated.csv` and generates the dataset `AOL-reduced-Citizen-Lab-Classification.csv`.
-  - `AOL-reduced-Google-Topics-Classification-v1.ipynb`: Converts the dataset `AOL-treated.csv` and generates the dataset `AOL-reduced-Google-Topics-Classification-v1.csv`.
-  - `AOL-experimental.ipynb`: Converts the dataset `AOL-treated.csv` and generates the dataset `AOL-experimental.csv`.
-  - `AOL-experimental-Citizen-Lab-Classification.ipynb`: Converts the dataset `AOL-reduced-Citizen-Lab-Classification.csv` and generates the dataset `AOL-experimental-Citizen-Lab-Classification.csv`.
-  - `AOL-experimental-Google-Topics-Classification-v1.ipynb`: Converts the dataset `AOL-reduced-Google-Topics-Classification-v1.csv` and generates the dataset `AOL-experimental-Google-Topics-Classification-v1.csv`.
+  - `AOL-data-treatment.ipynb`:
+    - Converts the original AOL dataset.
+    - Treats inconsistencies; Randomly remaps `AnonID` to `RandID`; Defines domains from URLs; and Filters domains by eTLD using `tldextract` and Mozilla's Public Suffix List, as of commit [5e6ac3a](https://github.com/publicsuffix/list/tree/5e6ac3a082505ac4cf08858bdb38382d9a912833), extended by the discontinued TLDs: .bg.ac.yu, .ac.yu, .cg.yu, .co.yu, .edu.yu, .gov.yu, .net.yu, .org.yu, .yu, .or.tp, .tp, and .an.
+    - Generates the datasets `AOL-treated.csv` and `AOL-treated-unique-domains.csv`.
+      - The dataset `AOL-treated.csv` can be used for analyses of browsing history vulnerability and utility, as enabled by third-party cookies.
+      - This dataset contains singletons (individuals with only one domain in their browsing histories) and one outlier (one user with 150.803 domain visits in three months) that are dropped in some analyses.
+  - `Citizen-Lab-Classification-data-treatment.ipynb`:
+    - Converts the Citizen Lab Classification data, as of commit [ebd0ee8](https://github.com/citizenlab/test-lists/tree/ebd0ee8d41977b381972b2f6c471af5437d8d015/lists).
+    - Treats inconsistencies; Defines domains from URLs; Filters domains by eTLD using `tldextract` and Mozilla's Public Suffix List, as of commit [5e6ac3a](https://github.com/publicsuffix/list/tree/5e6ac3a082505ac4cf08858bdb38382d9a912833), extended by the discontinued TLDs: .bg.ac.yu, .ac.yu, .cg.yu, .co.yu, .edu.yu, .gov.yu, .net.yu, .org.yu, .yu, .or.tp, .tp, and .an; and Merges classifications by domain.
+    - Generates the dataset `Citizen-Lab-Classification.csv`.
+  - `AOL-treated-Citizen-Lab-Classification-domain-matching.ipynb`:
+    - Matches domains from `AOL-treated-unique-domains.csv` with domains and respective topics from `Citizen-Lab-Classification.csv`.
+    - Generates the dataset `AOL-treated-Citizen-Lab-Classification-domain-match.csv`.
+  - `AOL-treated-Google-Topics-Classification-v1-domain-matching.ipynb`:
+    - Matches domains from `AOL-treated-unique-domains.csv` with domains and respective topics from `Google-Topics-Classification-v1.txt`, as provided by Google with the Chrome browser.
+    - Generates the dataset `AOL-treated-Google-Topics-Classification-v1-domain-match.csv`.
+  - `AOL-reduced-Citizen-Lab-Classification.ipynb`:
+    - Converts the dataset `AOL-treated.csv`.
+    - Reduces the dataset `AOL-treated.csv` according to the dataset `AOL-treated-Citizen-Lab-Classification-domain-match.csv`.
+    - Generates the dataset `AOL-reduced-Citizen-Lab-Classification.csv`.
+      - The dataset `AOL-reduced-Citizen-Lab-Classification.csv` can be used for analyses of browsing history vulnerability and utility, as enabled by third-party cookies, and for analyses of topics of interest vulnerability and utility, as enabled by the Topics API.
+      - This dataset contains singletons and the outlier that are dropped in some analyses.
+      - This dataset can be used for analyses including the (data-dependent) randomness of trimming-down or filling-up the top-s sets of topics for each individual so each set has s topics.
+      - Privacy results for Generalization and utility results for Generalization, Bounded Noise, and Differential Privacy are expected to slightly vary with each run of the analyses over this dataset.
+  - `AOL-reduced-Google-Topics-Classification-v1.ipynb`:
+    - Converts the dataset `AOL-treated.csv`.
+    - Reduces the dataset `AOL-treated.csv` according to the dataset `AOL-treated-Google-Topics-Classification-v1-domain-match.csv.
+    - Generates the dataset `AOL-reduced-Google-Topics-Classification-v1.csv`.
+      - The dataset `AOL-reduced-Google-Topics-Classification-v1.csv` can be used for analyses of browsing history vulnerability and utility, as enabled by third-party cookies, and for analyses of topics of interest vulnerability and utility, as enabled by the Topics API.
+      - This dataset contains singletons and the outlier that are dropped in some analyses.
+      - This dataset can be used for analyses including the (data-dependent) randomness of trimming-down or filling-up the top-s sets of topics for each individual so each set has s topics.
+      - Privacy results for Generalization and utility results for Generalization, Bounded Noise, and Differential Privacy are expected to slightly vary with each run of the analyses over this dataset.
+  - `AOL-experimental.ipynb`:
+    - Converts the dataset `AOL-treated.csv`.
+    - Drops singletons (individuals with only one domain in their browsing histories) and one outlier (one user with 150.803 domain visits in three months); and Defines browsing histories.
+    - Generates the dataset `AOL-experimental.csv`.
+      - The dataset `AOL-experimental.csv` can be used to empirically verify code correctness.
+      - All privacy and utility results are expected to remain the same with each run of the analyses over this dataset.
+  - `AOL-experimental-Citizen-Lab-Classification.ipynb`:
+    - Converts the dataset `AOL-reduced-Citizen-Lab-Classification.csv`.
+    - Generates the dataset `AOL-experimental-Citizen-Lab-Classification.csv`.
+      - The dataset `AOL-experimental-Citizen-Lab-Classification.csv` can be used to empirically verify code correctness.
+      - All privacy and utility results are expected to remain the same with each run of the analyses over this dataset.
+  - `AOL-experimental-Google-Topics-Classification-v1.ipynb`:
+    - Converts the dataset `AOL-reduced-Google-Topics-Classification-v1.csv`.
+    - Generates the dataset `AOL-experimental-Google-Topics-Classification-v1.csv`.
+      - The dataset `AOL-experimental-Google-Topics-Classification-v1.csv` can be used to empirically verify code correctness.
+      - All privacy and utility results are expected to remain the same with each run of the analyses over this dataset.
 - Analyses:
-  - `QIF-analyses-AOL-experimental.ipynb`: QIF analyses based on the dataset `AOL-experimental.csv`.
-  - `QIF-analyses-AOL-experimental-Citizen-Lab.ipynb`: QIF analyses based on the dataset `AOL-experimental-Citizen-Lab-Classification.csv`.
-  - `QIF-analyses-AOL-experimental-Google-Topics-v1.ipynb`: QIF analyses based on the dataset `AOL-experimental-Google-Topics-Classification-v1.csv`.
-  - `QIF-analyses-counting-experiment.ipynb`: QIF analysis for counting topics popularity using the binomial distribution. 
+  - `QIF-analyses-AOL-treated.ipynb`:
+    - QIF analyses based on the dataset `AOL-treated.csv`.
+    - All privacy and utility results are expected to remain the same with each run of the analyses over this dataset.
+  - `QIF-analyses-AOL-reduced-Citizen-Lab.ipynb`:
+    - QIF analyses based on the dataset `AOL-reduced-Citizen-Lab-Classification.csv`.
+    - Privacy results for Generalization and utility results for Generalization, Bounded Noise, and Differential Privacy are expected to slightly vary with each run of the analyses over this dataset.
+  - `QIF-analyses-AOL-reduced-Google-Topics-v1.ipynb`:
+    - QIF analyses based on the dataset `AOL-reduced-Google-Topics-Classification-v1.csv`.
+    - Privacy results for Generalization and utility results for Generalization, Bounded Noise, and Differential Privacy are expected to slightly vary with each run of the analyses over this dataset.
+  - `QIF-analyses-counting-experiment.ipynb`:
+    - QIF analysis for counting topics popularity using the binomial distribution.
+  - `QIF-analyses-AOL-experimental.ipynb`:
+    - QIF analyses based on the dataset `AOL-experimental.csv`.
+    - All privacy and utility results are expected to remain the same with each run of the analyses over this dataset.
+  - `QIF-analyses-AOL-experimental-Citizen-Lab.ipynb`:
+    - QIF analyses based on the dataset `AOL-experimental-Citizen-Lab-Classification.csv`.
+    - All privacy and utility results are expected to remain the same with each run of the analyses over this dataset.
+  - `QIF-analyses-AOL-experimental-Google-Topics-v1.ipynb`:
+    - QIF analyses based on the dataset `AOL-experimental-Google-Topics-Classification-v1.csv`.
+    - All privacy and utility results are expected to remain the same with each run of the analyses over this dataset.
 
 ## License
 
-[GNU LGPLv3](https://choosealicense.com/licenses/lgpl-3.0/).
+[GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/).
 
 To understand how the various GNU licenses are compatible with each other, please refer to the GNU licenses [FAQ](https://www.gnu.org/licenses/gpl-faq.html#AllCompatibility).
