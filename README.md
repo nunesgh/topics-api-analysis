@@ -1,8 +1,8 @@
 # Topics API Analysis
 
-[![DOI (v1.0)](https://zenodo.org/badge/DOI/10.5281/zenodo.11032231.svg)](https://doi.org/10.5281/zenodo.11032231)
+[![DOI (v2.0)](https://zenodo.org/badge/DOI/10.5281/zenodo.11032231.svg)](https://doi.org/10.5281/zenodo.11032231)
 
-DOI (v1.0): [10.5281/zenodo.11032231](https://doi.org/10.5281/zenodo.11032231).
+DOI (v2.0): [10.5281/zenodo.11032231](https://doi.org/10.5281/zenodo.11032231).
 
 This repository provides the experimental results of the paper *The Privacy-Utility Trade-off in the Topics API*.
 
