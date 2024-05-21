@@ -26,6 +26,16 @@ Please note that [`qif`](https://github.com/chatziko/libqif), as of version 1.2.
 
 The datasets produced for the experimental analyses can be found on Zenodo: *AOL Dataset for Browsing History and Topics of Interest* (DOI: [10.5281/zenodo.11029572](https://doi.org/10.5281/zenodo.11029572)).
 
+### Installation
+
+For convenience, create a Python virtual environment before installing the required packages:
+
+```
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
 ## Data treatment
 
 The data treatment notebooks are primarily for reference and were used to generate the *AOL Dataset for Browsing History and Topics of Interest* (DOI: [10.5281/zenodo.11029572](https://doi.org/10.5281/zenodo.11029572)) files.
