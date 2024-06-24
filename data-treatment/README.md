@@ -2,13 +2,13 @@
 
 ## Data treatment
 
-The data treatment notebooks are primarily for reference and were used to generate the *AOL Dataset for Browsing History and Topics of Interest* (DOI: [10.5281/zenodo.11029572](https://doi.org/10.5281/zenodo.11029572)) files.
+The data treatment notebooks are primarily for reference and were used to generate the *AOL Dataset for Browsing History and Topics of Interest* (DOI: [10.5281/zenodo.11229615](https://doi.org/10.5281/zenodo.11229615)) files.
 
-In particular, the `data-treatment/AOL-data-treatment.ipynb` notebook converts the original AOL dataset, i.e. the `AOL-[1-10].csv` files, to the first two datasets that are part of the *AOL Dataset for Browsing History and Topics of Interest* (DOI: [10.5281/zenodo.11029572](https://doi.org/10.5281/zenodo.11029572)), i.e. `AOL-treated.csv` and `AOL-treated-unique-domains.csv`. The original AOL dataset is known to be poorly sanitized for privacy protection and it is not provided as part of this artifact.
+In particular, the `data-treatment/AOL-data-treatment.ipynb` notebook converts the original AOL dataset, i.e. the `AOL-[1-10].csv` files, to the first two datasets that are part of the *AOL Dataset for Browsing History and Topics of Interest* (DOI: [10.5281/zenodo.11229615](https://doi.org/10.5281/zenodo.11229615)), i.e. `AOL-treated.csv` and `AOL-treated-unique-domains.csv`. The original AOL dataset is known to be poorly sanitized for privacy protection and it is not provided as part of this artifact.
 
-For all the other notebooks, the input files are either directly downloaded from GitHub, i.e. Citizen Lab's test lists at commit [ebd0ee8](https://github.com/citizenlab/test-lists/tree/ebd0ee8d41977b381972b2f6c471af5437d8d015/lists) and Mozilla's Public Suffix List at commit [5e6ac3a](https://github.com/publicsuffix/list/tree/5e6ac3a082505ac4cf08858bdb38382d9a912833), or can be downloaded from the *AOL Dataset for Browsing History and Topics of Interest* (DOI: [10.5281/zenodo.11029572](https://doi.org/10.5281/zenodo.11029572)).
+For all the other notebooks, the input files are either directly downloaded from GitHub, i.e. Citizen Lab's test lists at commit [ebd0ee8](https://github.com/citizenlab/test-lists/tree/ebd0ee8d41977b381972b2f6c471af5437d8d015/lists) and Mozilla's Public Suffix List at commit [5e6ac3a](https://github.com/publicsuffix/list/tree/5e6ac3a082505ac4cf08858bdb38382d9a912833), or can be downloaded from the *AOL Dataset for Browsing History and Topics of Interest* (DOI: [10.5281/zenodo.11229615](https://doi.org/10.5281/zenodo.11229615)).
 
-To execute the analyses notebooks, please make sure to add to the folder `data-treatment/` the respective files from the *AOL Dataset for Browsing History and Topics of Interest* (DOI: [10.5281/zenodo.11029572](https://doi.org/10.5281/zenodo.11029572)).
+To execute the analyses notebooks, please make sure to add to the folder `data-treatment/` the respective files from the *AOL Dataset for Browsing History and Topics of Interest* (DOI: [10.5281/zenodo.11229615](https://doi.org/10.5281/zenodo.11229615)).
 
 The notebooks are listed in order of execution.
 

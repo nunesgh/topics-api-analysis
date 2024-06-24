@@ -2,7 +2,7 @@
 
 ## Analyses
 
-To execute the analyses notebooks, please make sure to add to the folder `analyses/` the respective files from the *AOL Dataset for Browsing History and Topics of Interest* (DOI: [10.5281/zenodo.11029572](https://doi.org/10.5281/zenodo.11029572)).
+To execute the analyses notebooks, please make sure to add to the folder `analyses/` the respective files from the *AOL Dataset for Browsing History and Topics of Interest* (DOI: [10.5281/zenodo.11229615](https://doi.org/10.5281/zenodo.11229615)).
 
 The notebooks are listed in order of execution.
 

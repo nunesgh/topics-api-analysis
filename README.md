@@ -1,10 +1,10 @@
 # Topics API Analysis
 
-[![DOI (v2.0)](https://zenodo.org/badge/DOI/10.5281/zenodo.11032231.svg)](https://doi.org/10.5281/zenodo.11032231)
+[![DOI (v2.0)](https://zenodo.org/badge/DOI/10.5281/zenodo.11229402.svg)](https://doi.org/10.5281/zenodo.11229402)
 
-DOI (v2.0): [10.5281/zenodo.11032231](https://doi.org/10.5281/zenodo.11032231).
+DOI (v2.0): [10.5281/zenodo.11229402](https://doi.org/10.5281/zenodo.11229402).
 
-This repository provides the experimental results of the paper *The Privacy-Utility Trade-off in the Topics API*.
+This repository provides the experimental results of the paper *The Privacy-Utility Trade-off in the Topics API* (DOI: [10.1145/3658644.3670368](https://doi.org/10.1145/3658644.3670368); arXiv: [2406.15309](https://arxiv.org/abs/2406.15309)).
 
 ## Usage
 
@@ -24,7 +24,7 @@ The notebooks were run using:
 
 Please note that [`qif`](https://github.com/chatziko/libqif), as of version 1.2.3, is not compatible with Apple Silicon processors. This is a known issue already reported on the module's GitHub repository: [Support for M1 Mac](https://github.com/chatziko/libqif/issues/6).
 
-The datasets produced for the experimental analyses can be found on Zenodo: *AOL Dataset for Browsing History and Topics of Interest* (DOI: [10.5281/zenodo.11029572](https://doi.org/10.5281/zenodo.11029572)).
+The datasets produced for the experimental analyses can be found on Zenodo: *AOL Dataset for Browsing History and Topics of Interest* (DOI: [10.5281/zenodo.11229615](https://doi.org/10.5281/zenodo.11229615)).
 
 ### Installation
 
@@ -38,13 +38,13 @@ pip install -r requirements.txt
 
 ## Data treatment
 
-The data treatment notebooks are primarily for reference and were used to generate the *AOL Dataset for Browsing History and Topics of Interest* (DOI: [10.5281/zenodo.11029572](https://doi.org/10.5281/zenodo.11029572)) files.
+The data treatment notebooks are primarily for reference and were used to generate the *AOL Dataset for Browsing History and Topics of Interest* (DOI: [10.5281/zenodo.11229615](https://doi.org/10.5281/zenodo.11229615)) files.
 
-To execute the analyses notebooks, please make sure to add to the folder `data-treatment/` the respective files from the *AOL Dataset for Browsing History and Topics of Interest* (DOI: [10.5281/zenodo.11029572](https://doi.org/10.5281/zenodo.11029572)).
+To execute the analyses notebooks, please make sure to add to the folder `data-treatment/` the respective files from the *AOL Dataset for Browsing History and Topics of Interest* (DOI: [10.5281/zenodo.11229615](https://doi.org/10.5281/zenodo.11229615)).
 
 ## Analyses
 
-To execute the analyses notebooks, please make sure to add to the folder `analyses/` the respective files from the *AOL Dataset for Browsing History and Topics of Interest* (DOI: [10.5281/zenodo.11029572](https://doi.org/10.5281/zenodo.11029572)).
+To execute the analyses notebooks, please make sure to add to the folder `analyses/` the respective files from the *AOL Dataset for Browsing History and Topics of Interest* (DOI: [10.5281/zenodo.11229615](https://doi.org/10.5281/zenodo.11229615)).
 
 ## License
 
